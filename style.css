@@ -221,7 +221,7 @@ h3 { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
 .prose h3 { margin: 34px 0 12px; }
 .prose ul { list-style: none; margin: 0 0 20px; }
 .prose li { color: var(--muted); font-size: 14.5px; font-weight: 300; padding: 7px 0 7px 24px; position: relative; line-height: 1.65; }
-.prose li::before { content: "—"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.prose li::before { content: "›"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 .prose .note { border-left: 2px solid var(--accent); padding: 14px 18px; background: rgba(232,112,42,.06); border-radius: 0 12px 12px 0; margin: 22px 0; }
 .prose .note p { margin: 0; font-size: 14px; }
 
@@ -485,9 +485,145 @@ footer a { color: var(--text); }
 .legal p { margin-bottom: 12px; }
 .legal ul { list-style: none; margin: 0 0 18px; }
 .legal li { padding: 5px 0 5px 20px; position: relative; }
-.legal li::before { content: "—"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.legal li::before { content: "›"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 
 @media (max-width: 960px) {
   .lang-switch { display: none; }
   .lead-form .row { grid-template-columns: 1fr; }
+}
+
+/* ══ 行业词跑马灯（首页，全站唯一 marquee）══ */
+.kw-strip {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  background: rgba(16,22,21,.5);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.kw-track {
+  display: flex; gap: 0; width: max-content;
+  animation: kwSlide 32s linear infinite;
+  will-change: transform;
+}
+.kw-track:hover { animation-play-state: paused; }
+.kw-group { display: flex; align-items: center; flex-shrink: 0; }
+.kw-item {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 15px; font-weight: 300; color: rgba(255,255,255,.72);
+  white-space: nowrap; padding: 0 26px; letter-spacing: .02em;
+}
+.kw-item b { color: #fff; font-weight: 500; }
+.kw-item::after { content: ""; width: 5px; height: 5px; border-radius: 999px; background: var(--accent); opacity: .85; }
+.kw-item:last-child::after { display: none; }
+@keyframes kwSlide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* ══ 服务区 Bento 网格（一主二副，替换三张等宽卡）══ */
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.bento-card {
+  position: relative; overflow: hidden; text-decoration: none; color: inherit;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--panel); padding: 34px 32px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  transition: transform .22s cubic-bezier(.16,1,.3,1), border-color .22s;
+}
+.bento-card > :not(.b-bg) { position: relative; z-index: 1; }
+.bento-card:hover { transform: translateY(-4px); border-color: rgba(232,112,42,.45); }
+.bento-main { grid-column: span 8; min-height: 360px; }
+.bento-sub { grid-column: span 4; min-height: 171px; justify-content: center; }
+.bento-sub + .bento-sub { grid-column: span 4; }
+.bento-card .b-ic {
+  width: 44px; height: 44px; border-radius: 13px;
+  background: rgba(232,112,42,.12); border: 1px solid rgba(232,112,42,.25);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); margin-bottom: 18px;
+}
+.bento-card h3 { font-size: 21px; margin-bottom: 10px; letter-spacing: -.02em; }
+.bento-card p { font-size: 14px; color: var(--muted); font-weight: 300; line-height: 1.7; max-width: 42em; }
+.bento-card .more { margin-top: 18px; font-size: 13px; color: var(--accent); font-weight: 500; }
+.bento-card .b-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 85% 10%, rgba(232,112,42,.18), transparent 55%),
+    linear-gradient(180deg, rgba(16,22,21,.1), rgba(16,22,21,.96));
+}
+.bento-card .b-bg img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: top; opacity: .42;
+  transition: opacity .3s, transform .6s cubic-bezier(.16,1,.3,1);
+}
+.bento-card:hover .b-bg img { opacity: .58; transform: scale(1.04); }
+.bento-sub.amber { background: linear-gradient(160deg, rgba(232,112,42,.14), var(--panel) 62%); }
+
+/* ══ 聚光卡片（服务卡 / 案例卡 hover 光斑跟随）══ */
+.card, .case-card, .qj-link { position: relative; }
+.spot { --mx: 50%; --my: 50%; }
+.spot::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(340px circle at var(--mx) var(--my), rgba(232,112,42,.13), transparent 65%);
+  transition: opacity .25s;
+  border-radius: inherit;
+}
+.spot:hover::before { opacity: 1; }
+.case-card.spot::before { border-radius: var(--radius); }
+.case-card.spot .shot { position: relative; z-index: 1; }
+.case-card.spot .body { position: relative; z-index: 1; }
+
+/* ══ 联系 CTA：border-magic 渐变描边 ══ */
+.contact.border-magic { border-color: transparent; }
+@property --bm-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+.contact.border-magic::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  border-radius: 24px; padding: 1px;
+  background: conic-gradient(from var(--bm-angle), transparent 0 18%, rgba(232,112,42,.9) 50%, transparent 82% 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: bmSpin 7s linear infinite;
+}
+@keyframes bmSpin { to { --bm-angle: 360deg; } }
+
+/* ══ 内页 hero：极光背景层（about / contact）══ */
+.aurora { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.aurora::before, .aurora::after, .aurora span {
+  content: ""; position: absolute; border-radius: 9999px; filter: blur(90px);
+  will-change: transform; opacity: .5;
+}
+.aurora::before {
+  width: 620px; height: 420px; top: -140px; right: -80px;
+  background: rgba(232,112,42,.34);
+  animation: auroraDrift 16s ease-in-out infinite alternate;
+}
+.aurora::after {
+  width: 520px; height: 380px; bottom: -160px; left: -100px;
+  background: rgba(64,124,104,.4);
+  animation: auroraDrift 20s ease-in-out infinite alternate-reverse;
+}
+.aurora span {
+  width: 340px; height: 300px; top: 30%; left: 52%;
+  background: rgba(232,112,42,.18);
+  animation: auroraDrift 24s ease-in-out infinite alternate;
+}
+@keyframes auroraDrift {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(-70px, 46px) scale(1.16); }
+}
+.page-hero .wrap { position: relative; z-index: 1; }
+
+/* ══ 数字滚动（anime.js 驱动）══ */
+.num .v { font-variant-numeric: tabular-nums; }
+.num .count::after { content: attr(data-suffix); }
+
+@media (max-width: 960px) {
+  .bento-main, .bento-sub, .bento-sub + .bento-sub { grid-column: span 12; }
+  .bento-main { min-height: 300px; }
+  .bento-sub { min-height: auto; }
+  .kw-item { padding: 0 18px; font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kw-track { animation: none; }
+  .contact.border-magic::after { animation: none; }
+  .aurora::before, .aurora::after, .aurora span { animation: none; opacity: .32; }
+  .spot::before { opacity: .8; }
 }
