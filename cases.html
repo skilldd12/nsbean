@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Studies — NS-BEAN</title>
-<meta name="description" content="NS-BEAN case studies: four live deliveries — Haode PCBA (B2B manufacturing), VOLTMORE (3C DTC), NORN HOME (home goods DTC) and FABRIK Precision (CNC machining B2B), plus a real Shopify demo store.">
+<title>Case Studies - NS-BEAN | Real Shopify Stores, DTC &amp; B2B E-commerce Websites</title>
+<meta name="description" content="NS-BEAN case studies: Haode PCBA (B2B manufacturing), VOLTMORE (DTC tech), NORN HOME (DTC home goods) and FABRIK Precision (CNC machining B2B), plus a live Shopify demo store.">
 <link rel="canonical" href="https://skilldd12.github.io/nsbean/cases.html">
 <link rel="alternate" hreflang="en" href="https://skilldd12.github.io/nsbean/cases.html">
 <link rel="alternate" hreflang="zh" href="https://skilldd12.github.io/nsbean/zh/cases.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Case Studies — NS-BEAN">
+<meta property="og:title" content="Case Studies - NS-BEAN | Real Shopify &amp; DTC Stores">
 <meta property="og:description" content="Four live deliveries across B2B and DTC, plus a real Shopify demo store.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,11 +59,11 @@
 <section style="padding-top:80px">
   <div class="wrap">
 
-    <div class="case-card reveal" style="margin-bottom:28px">
+    <div class="case-card spot reveal" style="margin-bottom:28px">
       <div class="shot" style="height:200px;background:#151c19"></div>
       <div class="body">
         <div class="tag">Shopify · Tech accessories · Live demo store</div>
-        <h3>TechNest — our real Shopify demo store</h3>
+        <h3>TechNest - our real Shopify demo store</h3>
         <p>This is the exact form of delivery you get: a live Shopify backend with a working storefront. The store is currently in preview (password protected); email us and we will open it for you.</p>
         <ul>
           <li>Shopify store setup and theme configuration</li>
@@ -82,11 +82,11 @@
     </div>
 
     <div class="grid-2">
-      <div class="case-card reveal">
+      <div class="case-card spot reveal">
         <div class="shot has-img" style="height:260px"><img src="assets/case-haode-home.png" alt="Haode PCBA live website screenshot"></div>
         <div class="body">
           <div class="tag">B2B · PCBA Manufacturing · Live site</div>
-          <h3>Haode PCBA — manufacturer B2B export site</h3>
+          <h3>Haode PCBA - manufacturer B2B export site</h3>
           <p>A complete B2B export website for a Shenzhen PCBA manufacturer: service pages, factory equipment, spec tables, product catalog and an instant-quote inquiry system.</p>
           <ul>
             <li>B2B site build (WordPress + Elementor)</li>
@@ -97,11 +97,11 @@
           <a href="https://haode-pcba.com" target="_blank" rel="noopener">Open live site →</a>
         </div>
       </div>
-      <div class="case-card reveal">
+      <div class="case-card spot reveal">
         <div class="shot has-img" style="height:260px"><img src="assets/case-voltmore.png" alt="VOLTMORE store screenshot"></div>
         <div class="body">
           <div class="tag">DTC · 3C accessories · Live store</div>
-          <h3>VOLTMORE — 3C accessories DTC store</h3>
+          <h3>VOLTMORE - 3C accessories DTC store</h3>
           <p>A dark, tech-forward storefront for chargers, cables, power banks and audio: product grid, guarantee band and a working inquiry flow.</p>
           <ul>
             <li>Storefront design + product pages</li>
@@ -111,11 +111,11 @@
           <a href="https://skilldd12.github.io/voltmore/" target="_blank" rel="noopener">Open VOLTMORE →</a>
         </div>
       </div>
-      <div class="case-card reveal">
+      <div class="case-card spot reveal">
         <div class="shot has-img" style="height:260px"><img src="assets/case-nornhome.png" alt="NORN HOME store screenshot"></div>
         <div class="body">
           <div class="tag">DTC · Home goods · Live store</div>
-          <h3>NORN HOME — home goods DTC store</h3>
+          <h3>NORN HOME - home goods DTC store</h3>
           <p>A light, editorial storefront for ceramics, linen and furniture accents: brand story, product collection and material-focused copy.</p>
           <ul>
             <li>Editorial storefront + collection grid</li>
@@ -125,11 +125,11 @@
           <a href="https://skilldd12.github.io/nornhome/" target="_blank" rel="noopener">Open NORN HOME →</a>
         </div>
       </div>
-      <div class="case-card reveal">
+      <div class="case-card spot reveal">
         <div class="shot has-img" style="height:260px"><img src="assets/case-fabrik.png" alt="FABRIK Precision website screenshot"></div>
         <div class="body">
           <div class="tag">B2B · Precision manufacturing · Live site</div>
-          <h3>FABRIK Precision — CNC machining B2B site</h3>
+          <h3>FABRIK Precision - CNC machining B2B site</h3>
           <p>A spec-driven B2B site for a precision machining partner: capability tables, process timeline, materials and a quote-request flow.</p>
           <ul>
             <li>Capability and materials tables</li>
@@ -253,6 +253,23 @@
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  var spots = document.querySelectorAll('.spot');
+  var reducedHover = window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.matchMedia('(hover: hover)').matches;
+  if (!reducedHover) {
+    spots.forEach(function (card) {
+      var raf = null;
+      card.addEventListener('mousemove', function (ev) {
+        if (raf) return;
+        raf = requestAnimationFrame(function () {
+          raf = null;
+          var r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', ((ev.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+          card.style.setProperty('--my', ((ev.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+        });
+      }, { passive: true });
+    });
+  }
 </script>
 </body>
 </html>
