@@ -175,7 +175,7 @@
       <div class="sec-kicker">Start · begin</div>
       <h2>Email now, <span class="font-playfair">get a plan today</span></h2>
       <p>Even if you are just exploring, replying is free consulting.</p>
-      <a class="big-mail" href="mailto:2096243628@qq.com">2096243628@qq.com</a>
+      <a class="big-mail drag-back" href="mailto:2096243628@qq.com">2096243628@qq.com</a>
     </div>
   </div>
 </section>
@@ -210,6 +210,12 @@
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
+<script type="module">
+  import { dragBack, faqSpring, cardHoverSpring } from './assets/nsbean-effects.js';
+  dragBack('.big-mail');
+  faqSpring(document);
+  cardHoverSpring('.contact');
 </script>
 </body>
 </html>

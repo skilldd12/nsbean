@@ -194,5 +194,11 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 </script>
+<script type="module">
+  import { yearReveal, cardHoverSpring, dragBack } from './assets/nsbean-effects.js';
+  yearReveal('.timeline .tl-item', '.tl-year');
+  cardHoverSpring('.team-card');
+  dragBack('.team-card .avatar');
+</script>
 </body>
 </html>

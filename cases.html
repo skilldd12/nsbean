@@ -220,6 +220,13 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="work-band reveal">
+      <div class="morph-deco" aria-hidden="true">
+        <svg width="120" height="120" viewBox="0 0 120 120">
+          <path id="morphLive" d="M60 15a45 45 0 100 90 45 45 0 100-90z"/>
+          <path id="morphA" d="M60 10 110 60 60 110 10 60z" style="display:none"/>
+          <path id="morphB" d="M60 12 90 34 90 86 60 108 30 86 30 34z" style="display:none"/>
+        </svg>
+      </div>
       <img src="assets/ecommerce-box.jpg" alt="Cross-border orders being packed">
       <div class="wb-text">
         <div class="sec-kicker">Behind the scenes</div>
@@ -270,6 +277,13 @@
       }, { passive: true });
     });
   }
+</script>
+<script type="module">
+  import { caseFlip, cardHoverSpring, morphDeco, parallax } from './assets/nsbean-effects.js';
+  caseFlip('.case-card');
+  cardHoverSpring('.card[id^=blueprint]');
+  morphDeco('#morphLive', ['#morphA', '#morphB', '#morphLive'], '.work-band');
+  parallax('.work-band img', 40);
 </script>
 </body>
 </html>

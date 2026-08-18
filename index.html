@@ -618,5 +618,12 @@
     }
   }
 </script>
+<script type="module">
+  import { heroSpring, iconSpring, caseFlip, timelineScrub } from './assets/nsbean-effects.js';
+  heroSpring('.hero-sub, .hero-cta-block');
+  iconSpring(document, '.b-ic svg');
+  caseFlip('.grid-3 .card');
+  timelineScrub('#tlBeam', '#process .tl');
+</script>
 </body>
 </html>

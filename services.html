@@ -205,5 +205,9 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 </script>
+<script type="module">
+  import { cardHoverSpring } from './assets/nsbean-effects.js';
+  cardHoverSpring('.svc-detail', { lift: -3 });
+</script>
 </body>
 </html>

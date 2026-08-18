@@ -175,7 +175,7 @@
       <div class="sec-kicker">Start · 开始</div>
       <h2>现在发邮件，今天出方案</h2>
       <p>不聊也能先问问题，回复本身就是免费的咨询。</p>
-      <a class="big-mail" href="mailto:2096243628@qq.com">2096243628@qq.com</a>
+      <a class="big-mail drag-back" href="mailto:2096243628@qq.com">2096243628@qq.com</a>
     </div>
   </div>
 </section>
@@ -210,6 +210,12 @@
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
+<script type="module">
+  import { dragBack, faqSpring, cardHoverSpring } from '../assets/nsbean-effects.js';
+  dragBack('.big-mail');
+  faqSpring(document);
+  cardHoverSpring('.contact');
 </script>
 </body>
 </html>

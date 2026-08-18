@@ -733,3 +733,29 @@ footer a { color: var(--text); }
   .tl-beam { transform: scaleY(1); transition: none; }
   .glare::after { opacity: .5; }
 }
+
+/* ══ NS-BEAN anime 高级动效辅助 ══ */
+.grid-2, .grid-3, .bento, .svc-detail, .case-card { perspective: 1400px; }
+.case-card, .grid-3 .card, .bento-card { transform-style: preserve-3d; will-change: transform; }
+.tl-beam { transition: none; }
+.b-ic svg, .ic svg { transform-box: fill-box; transform-origin: center; will-change: transform; }
+.tl-year, .timeline .tl-year { display: inline-block; will-change: transform; }
+.drag-back { touch-action: none; cursor: grab; }
+.drag-back:active { cursor: grabbing; }
+.morph-deco path { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linecap: round; }
+.parallax { will-change: transform; }
+details p { transition: opacity .2s ease; }
+.work-band { position: relative; overflow: hidden; }
+.morph-deco {
+  position: absolute; right: 28px; top: 50%; transform: translateY(-50%);
+  opacity: .75; pointer-events: none; z-index: 1;
+}
+@media (max-width: 760px) {
+  .morph-deco { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-card, .grid-3 .card, .bento-card { transform: none !important; opacity: 1 !important; }
+  .tl-year, .timeline .tl-year { transform: none !important; opacity: 1 !important; }
+  .morph-deco, .parallax { display: none; }
+}
