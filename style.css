@@ -426,3 +426,53 @@ footer a { color: var(--text); }
   .tl-item { grid-template-columns: 76px 1fr; gap: 16px; }
   .work-band .wb-text { padding: 28px 24px; }
 }
+
+/* ── 语言切换器 ── */
+.lang-switch {
+  display: flex; align-items: center; gap: 2px; margin-left: 6px;
+  padding: 3px; background: rgba(255,255,255,.06);
+  border: 1px solid var(--line); border-radius: 999px;
+}
+.lang-switch a {
+  padding: 5px 11px; font-size: 12px; font-weight: 600;
+  border-radius: 999px; color: rgba(255,255,255,.62);
+  text-decoration: none; white-space: nowrap;
+  transition: background .16s, color .16s;
+}
+.lang-switch a:hover { color: #fff; }
+.lang-switch a.on { background: var(--accent); color: #fff; }
+
+/* ── 询盘表单 ── */
+.lead-form { display: grid; gap: 14px; margin-top: 24px; }
+.lead-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.lead-form label { font-size: 13px; color: var(--muted); font-weight: 400; display: grid; gap: 7px; }
+.lead-form input, .lead-form textarea, .lead-form select {
+  width: 100%; background: #0e1412; border: 1px solid var(--line); border-radius: 12px;
+  color: var(--text); font: inherit; font-size: 14px; padding: 12px 14px;
+  outline: none; transition: border-color .15s, box-shadow .15s;
+}
+.lead-form input:focus, .lead-form textarea:focus, .lead-form select:focus {
+  border-color: rgba(232,112,42,.55); box-shadow: 0 0 0 3px rgba(232,112,42,.12);
+}
+.lead-form textarea { min-height: 120px; resize: vertical; }
+.lead-form select option { background: #151b19; color: var(--text); }
+.lead-form .btn {
+  justify-self: start; border: 0; cursor: pointer;
+  font-family: inherit; letter-spacing: -.01em;
+}
+.lead-form .btn:active { transform: scale(.96); }
+.form-hint { font-size: 12.5px; color: var(--muted); font-weight: 300; }
+
+/* ── 法务页 ── */
+.legal { max-width: 780px; }
+.legal h3 { margin: 30px 0 10px; font-size: 17px; }
+.legal p, .legal li { font-size: 14.5px; color: var(--muted); font-weight: 300; }
+.legal p { margin-bottom: 12px; }
+.legal ul { list-style: none; margin: 0 0 18px; }
+.legal li { padding: 5px 0 5px 20px; position: relative; }
+.legal li::before { content: "—"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+@media (max-width: 960px) {
+  .lang-switch { display: none; }
+  .lead-form .row { grid-template-columns: 1fr; }
+}
