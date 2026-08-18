@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出海建站社 — Shopify / 独立站搭建与运营外包</title>
+<meta name="description" content="Shopify/独立站搭建、主图详情页设计、广告制作、店铺运营一站式外包。3 天交付可收款店铺。">
+<style>
+  :root {
+    --ink: #131a18;
+    --ink-2: #3c4743;
+    --bg: #f4f6f5;
+    --card: #ffffff;
+    --line: #dde4e1;
+    --accent: #e8590c;
+    --accent-dark: #c2470a;
+    --radius: 14px;
+    --font: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(244,246,245,.88);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .brand { font-weight: 800; letter-spacing: -.02em; font-size: 17px; }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 26px; align-items: center; }
+  .nav-links a { color: var(--ink-2); text-decoration: none; font-size: 14px; }
+  .nav-links a:hover { color: var(--ink); }
+  .cta-btn {
+    display: inline-block;
+    background: var(--accent); color: #fff;
+    padding: 9px 18px; border-radius: 999px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: transform .12s ease, background .15s ease;
+    white-space: nowrap;
+  }
+  .cta-btn:hover { background: var(--accent-dark); }
+  .cta-btn:active { transform: scale(.97); }
+
+  /* Hero */
+  .hero {
+    display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px;
+    align-items: center; padding: 72px 0 64px; min-height: 88vh;
+  }
+  .eyebrow {
+    display: inline-block; font-size: 12px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 18px;
+  }
+  h1 {
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.12; letter-spacing: -.03em; font-weight: 800;
+    margin-bottom: 20px; max-width: 12em;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .hero-sub {
+    color: var(--ink-2); font-size: 16px; max-width: 34em;
+    margin-bottom: 32px;
+  }
+  .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .cta-btn-lg { padding: 13px 26px; font-size: 16px; }
+  .hero-note { font-size: 13px; color: var(--ink-2); margin-top: 14px; }
+  .hero-note a { color: var(--accent); text-decoration: none; }
+
+  /* Hero visual: storefront card */
+  .hero-visual { position: relative; }
+  .store-card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 22px;
+    box-shadow: 0 24px 48px -24px rgba(19,26,24,.18);
+    transform: rotate(-1.2deg);
+  }
+  .store-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .store-logo { font-weight: 800; font-size: 15px; letter-spacing: -.01em; }
+  .store-logo span { color: var(--accent); }
+  .store-nav { display: flex; gap: 14px; font-size: 12px; color: var(--ink-2); }
+  .store-hero {
+    background: linear-gradient(135deg, #14211d, #1f352e);
+    color: #fff; border-radius: 10px; padding: 26px 20px; margin-bottom: 18px;
+  }
+  .store-hero p:first-child { font-size: 11px; letter-spacing: .1em; opacity: .65; margin-bottom: 6px; }
+  .store-hero p:last-child { font-size: 19px; font-weight: 700; }
+  .store-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .p-card { border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  .p-thumb { height: 52px; border-radius: 7px; background: #e8eeea; margin-bottom: 8px; position: relative; overflow: hidden; }
+  .p-thumb::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.5) 50%, transparent 70%);
+    animation: shine 3.2s infinite;
+  }
+  @keyframes shine { 0% { transform: translateX(-100%);} 60%,100% { transform: translateX(100%);} }
+  .p-name { font-size: 11px; color: var(--ink-2); margin-bottom: 3px; }
+  .p-price { font-size: 12px; font-weight: 700; color: var(--accent); }
+  .float-tag {
+    position: absolute; right: -14px; top: 34px;
+    background: var(--ink); color: #fff; font-size: 12px; font-weight: 600;
+    padding: 8px 14px; border-radius: 999px;
+    box-shadow: 0 10px 24px -8px rgba(19,26,24,.4);
+  }
+
+  /* Section scaffolding */
+  section { padding: 84px 0; }
+  .sec-head { margin-bottom: 46px; }
+  .sec-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  h2 { font-size: clamp(26px, 3.6vw, 40px); letter-spacing: -.025em; line-height: 1.18; font-weight: 800; }
+  .sec-desc { color: var(--ink-2); font-size: 15px; max-width: 42em; margin-top: 12px; }
+
+  /* Services */
+  .services { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .svc {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 24px; transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .svc:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -20px rgba(19,26,24,.2); }
+  .svc-num { font-size: 12px; font-weight: 800; color: var(--accent); letter-spacing: .08em; margin-bottom: 14px; }
+  .svc h3 { font-size: 18px; margin-bottom: 10px; letter-spacing: -.01em; }
+  .svc p { font-size: 14px; color: var(--ink-2); margin-bottom: 16px; }
+  .svc-price { font-size: 15px; font-weight: 700; }
+  .svc-price small { font-weight: 400; color: var(--ink-2); font-size: 13px; }
+
+  /* How it works */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: step; }
+  .step { border-top: 2px solid var(--ink); padding-top: 18px; }
+  .step b { display: block; font-size: 15px; margin-bottom: 8px; }
+  .step p { font-size: 14px; color: var(--ink-2); }
+
+  /* Pricing */
+  .pricing { border-top: 1px solid var(--line); }
+  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+  .plan {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 24px; display: flex; flex-direction: column;
+  }
+  .plan.featured { border: 2px solid var(--accent); position: relative; }
+  .plan.featured::before {
+    content: "最受欢迎"; position: absolute; top: -12px; left: 24px;
+    background: var(--accent); color: #fff; font-size: 12px; font-weight: 700;
+    padding: 3px 12px; border-radius: 999px;
+  }
+  .plan h3 { font-size: 17px; margin-bottom: 4px; }
+  .plan .amt { font-size: 30px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 18px; }
+  .plan .amt small { font-size: 14px; font-weight: 400; color: var(--ink-2); }
+  .plan ul { list-style: none; margin-bottom: 24px; flex: 1; }
+  .plan li { font-size: 14px; color: var(--ink-2); padding: 6px 0 6px 22px; position: relative; }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+
+  /* Trust */
+  .trust { border-top: 1px solid var(--line); background: var(--card); }
+  .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .t-item .t-num { font-size: 30px; font-weight: 800; letter-spacing: -.02em; color: var(--accent); }
+  .t-item p { font-size: 13px; color: var(--ink-2); margin-top: 4px; }
+
+  /* FAQ */
+  .faq { max-width: 760px; }
+  .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .faq summary { cursor: pointer; font-weight: 700; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq summary::after { content: "+"; font-size: 20px; color: var(--accent); font-weight: 400; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { font-size: 14px; color: var(--ink-2); margin-top: 12px; max-width: 44em; }
+
+  /* Final CTA */
+  .final-cta { background: var(--ink); color: #fff; border-radius: 22px; padding: 56px 48px; text-align: center; }
+  .final-cta h2 { color: #fff; margin-bottom: 12px; }
+  .final-cta p { color: rgba(255,255,255,.72); font-size: 15px; margin-bottom: 28px; }
+  .final-cta .cta-btn { background: var(--accent); font-size: 16px; padding: 13px 28px; }
+  .final-cta .cta-btn:hover { background: #ff6b1a; }
+  .final-cta .sub { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,.55); }
+  .final-cta .sub a { color: #fff; }
+
+  footer { padding: 40px 0 60px; color: var(--ink-2); font-size: 13px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 0; min-height: auto; }
+    .svc-grid, .price-grid, .steps, .trust-grid { grid-template-columns: 1fr; }
+    .nav-links a:not(.cta-btn) { display: none; }
+    section { padding: 60px 0; }
+    .float-tag { right: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .p-thumb::after { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">出海建站社<span>.</span></div>
+    <div class="nav-links">
+      <a href="#services">服务</a>
+      <a href="#pricing">报价</a>
+      <a href="#faq">常见问题</a>
+      <a class="cta-btn" href="#contact">聊聊需求</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wrap hero">
+  <div>
+    <span class="eyebrow">Shopify · 独立站 · 全托管</span>
+    <h1>你的独立站，<em>3 天</em>上线可收款</h1>
+    <p class="hero-sub">从零搭好 Shopify / 独立站，产品上架、主图详情页、广告、运营一条龙。你只管出货，网站和技术交给我。</p>
+    <div class="hero-cta-row">
+      <a class="cta-btn cta-btn-lg" href="#contact">聊聊你的需求</a>
+    </div>
+    <p class="hero-note">演示店铺可先看效果 → <a href="https://zdckg1-gd.myshopify.com" target="_blank" rel="noopener">点这里</a></p>
+  </div>
+  <div class="hero-visual">
+    <div class="store-card">
+      <div class="store-top">
+        <div class="store-logo">TechNest<span>.</span></div>
+        <div class="store-nav"><span>Shop</span><span>About</span><span>Cart</span></div>
+      </div>
+      <div class="store-hero">
+        <p>NEW ARRIVALS</p>
+        <p>Everyday tech, made simple</p>
+      </div>
+      <div class="store-grid">
+        <div class="p-card"><div class="p-thumb"></div><div class="p-name">Magnetic Case</div><div class="p-price">$12.99</div></div>
+        <div class="p-card"><div class="p-thumb"></div><div class="p-name">Fast Cable 65W</div><div class="p-price">$9.99</div></div>
+        <div class="p-card"><div class="p-thumb"></div><div class="p-name">Earbuds Pro</div><div class="p-price">$29.99</div></div>
+      </div>
+    </div>
+    <div class="float-tag">Demo · 真实 Shopify 店铺</div>
+  </div>
+</header>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Services</div>
+      <h2>一站式，从建站到出单</h2>
+      <p class="sec-desc">不用分别找设计、技术、运营。一个团队（就是我）全包，报价透明，做完给你后台权限。</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="svc-num">01 / BUILD</div>
+        <h3>独立站 / Shopify 建站</h3>
+        <p>店铺搭建、主题装修、产品上架、收款与物流设置、基础 SEO。交付可收款的完整店铺。</p>
+        <div class="svc-price">¥599 起 <small>/ 站</small></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-num">02 / DESIGN</div>
+        <h3>主图 · 详情页设计</h3>
+        <p>产品主图、白底图、场景图、详情页排版，按跨境电商规范做，提升点击和转化。</p>
+        <div class="svc-price">¥199 起 <small>/ 套</small></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-num">03 / GROW</div>
+        <h3>广告制作 · 店铺运营</h3>
+        <p>社媒/搜索广告图与文案，日常运营托管：上新品、调价、客服话术、数据分析。</p>
+        <div class="svc-price">¥299 起 <small>/ 项</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Process</div>
+      <h2>三步开工</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <b>1. 说需求</b>
+        <p>告诉我你的品类、产品数量、目标市场，或直接发产品图。</p>
+      </div>
+      <div class="step reveal">
+        <b>2. 出方案报价</b>
+        <p>确认方案和总价，预付后开工。进度随时同步。</p>
+      </div>
+      <div class="step reveal">
+        <b>3. 交付上线</b>
+        <p>网站做好、产品传好、收款通路打通，交付后台并教你怎么用。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Pricing</div>
+      <h2>明码标价</h2>
+      <p class="sec-desc">按需组合，不玩虚的。加急、定制、更多产品另报。</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan reveal">
+        <h3>基础建站</h3>
+        <div class="amt">¥599 <small>/ 站</small></div>
+        <ul>
+          <li>Shopify / 独立站搭建</li>
+          <li>主题装修 + 移动端适配</li>
+          <li>10 个产品上架</li>
+          <li>支付 + 物流设置</li>
+          <li>交付使用教程</li>
+        </ul>
+        <a class="cta-btn" href="#contact">选这个</a>
+      </div>
+      <div class="plan featured reveal">
+        <h3>标准套餐</h3>
+        <div class="amt">¥999 <small>/ 站</small></div>
+        <ul>
+          <li>基础建站全部内容</li>
+          <li>30 个产品上架</li>
+          <li>基础 SEO 优化</li>
+          <li>PayPal / 信用卡收款配置</li>
+          <li>首页主视觉定制</li>
+        </ul>
+        <a class="cta-btn" href="#contact">选这个</a>
+      </div>
+      <div class="plan reveal">
+        <h3>全套运营</h3>
+        <div class="amt">¥1999 <small>/ 站 + 1 月</small></div>
+        <ul>
+          <li>标准套餐全部内容</li>
+          <li>主图 / 详情页设计</li>
+          <li>广告图 + 文案制作</li>
+          <li>1 个月运营托管</li>
+          <li>数据复盘 + 优化建议</li>
+        </ul>
+        <a class="cta-btn" href="#contact">选这个</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="t-item reveal">
+        <div class="t-num">3 天</div>
+        <p>基础店从开工到交付</p>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">100%</div>
+        <p>透明报价，无隐藏费用</p>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">7×24</div>
+        <p>随时响应，进度可查</p>
+      </div>
+      <div class="t-item reveal">
+        <div class="t-num">真实</div>
+        <p>交付真实 Shopify 店铺给你看</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="faq" id="faq">
+      <div class="sec-head reveal">
+        <div class="sec-kicker">FAQ</div>
+        <h2>常见问题</h2>
+      </div>
+      <details class="reveal">
+        <summary>多久能做好？</summary>
+        <p>基础店 3 天内交付；含主图和运营的全套方案 5-7 天。加急可以协商。</p>
+      </details>
+      <details class="reveal">
+        <summary>我不懂技术，能自己运营吗？</summary>
+        <p>能。交付时我会给你一份图文教程，并教你后台日常操作；需要的话可以选运营托管，我来维护。</p>
+      </details>
+      <details class="reveal">
+        <summary>可以先看效果再付款吗？</summary>
+        <p>可以先看演示店铺（含真实 Shopify 后台效果）。确认开工后预付 50%，交付验收后付尾款。</p>
+      </details>
+      <details class="reveal">
+        <summary>Shopify 月费谁出？</summary>
+        <p>Shopify 订阅费和域名由你直接支付给 Shopify（14 天免费试用期不花钱），我不经手这笔钱，只负责搭建配置。</p>
+      </details>
+      <details class="reveal">
+        <summary>后续想加功能怎么办？</summary>
+        <p>随时找我，按单项报价，老客户有优惠。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta reveal" id="contact">
+      <h2>现在开始，把店铺开起来</h2>
+      <p>告诉我你的品类和预算，今天出方案。</p>
+      <a class="cta-btn" href="https://www.goofish.com/personal?userId=2699776650" target="_blank" rel="noopener">闲鱼联系我</a>
+      <div class="sub">或加微信详聊：<a href="#contact">微信</a> · 回复“建站”更快</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 出海建站社 · Shopify / 独立站搭建与运营</div>
+    <div>演示店铺：zdckg1-gd.myshopify.com</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
