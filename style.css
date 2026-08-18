@@ -627,3 +627,53 @@ footer a { color: var(--text); }
   .aurora::before, .aurora::after, .aurora span { animation: none; opacity: .32; }
   .spot::before { opacity: .8; }
 }
+
+/* ══ Hero 极光层（Aceternity aurora 风格）══ */
+.hero-aurora { z-index: 15; }
+.hero-aurora::before, .hero-aurora::after, .hero-aurora span { filter: blur(110px); }
+.hero-aurora::before { width: 760px; height: 480px; top: -180px; right: -120px; background: rgba(232,112,42,.4); }
+.hero-aurora::after { width: 640px; height: 460px; bottom: -220px; left: -140px; background: rgba(64,140,116,.42); }
+.hero-aurora span:nth-child(1) { width: 480px; height: 380px; top: 26%; left: 46%; background: rgba(255,154,95,.26); }
+.hero-aurora span:nth-child(2) { width: 380px; height: 300px; top: 12%; left: 8%; background: rgba(232,112,42,.2); animation-delay: -8s; }
+
+/* ══ Hero 逐字动画（BlurText 风格，anime 驱动）══ */
+.hero-heading .l1, .hero-heading .l2 { display: flex; flex-wrap: wrap; justify-content: center; gap: .08em; }
+.hero-heading .w { display: inline-flex; white-space: nowrap; }
+.hero-heading .ch {
+  display: inline-block; opacity: 0;
+  filter: blur(10px); transform: translateY(18px);
+  will-change: transform, opacity, filter;
+}
+.hero-heading .sp { width: .32em; }
+
+/* ══ 磁吸按钮（magnetic）══ */
+.magnetic { transition: transform .12s cubic-bezier(.16,1,.3,1); will-change: transform; }
+
+/* ══ 3D 倾斜卡（Aceternity TiltCard 风格）══ */
+.tilt { transform-style: preserve-3d; transition: transform .16s ease-out, border-color .22s; }
+.tilt.flatten { transform: perspective(900px) rotateX(0deg) rotateY(0deg) !important; }
+.tilt > * { transform: translateZ(0); }
+
+/* ══ 流光文字（ReactBits ShinyText）══ */
+.shiny {
+  background: linear-gradient(110deg, rgba(255,255,255,.68) 32%, #ffb27a 48%, #fff 52%, rgba(255,255,255,.68) 68%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: shine 5.5s linear infinite;
+}
+@keyframes shine { 0% { background-position: 120% 0; } 100% { background-position: -100% 0; } }
+
+/* ══ 鼠标粒子光标（ReactBits SplashCursor 风格）══ */
+#splash-canvas {
+  position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  #splash-canvas { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-heading .ch { opacity: 1; filter: none; transform: none; }
+  .shiny { animation: none; }
+}
