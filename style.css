@@ -34,7 +34,7 @@ nav {
   border-bottom: 1px solid var(--line);
 }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-.brand img.logo { width: auto; height: 30px; border-radius: 8px; display: block; }
+.brand img.logo { width: auto; height: 42px; display: block; }
 .brand .word { font-family: "Playfair Display", serif; font-style: italic; font-size: 20px; }
 .nav-links { display: flex; gap: 4px; align-items: center; }
 .nav-links a {
