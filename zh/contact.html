@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联系与常见问题 — 出海建站社</title>
+<meta name="description" content="联系出海建站社：2096243628@qq.com。常见问题：工期、付款、售后、Shopify 费用、运营托管。">
+<link rel="canonical" href="https://skilldd12.github.io/web-service-site/zh/contact.html">
+<link rel="alternate" hreflang="zh" href="https://skilldd12.github.io/web-service-site/zh/contact.html">
+<link rel="alternate" hreflang="en" href="https://skilldd12.github.io/web-service-site/contact.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="联系与常见问题 — 出海建站社">
+<meta property="og:description" content="一封邮件，聊出方案。回复不超过 24 小时。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">
+    <svg width="24" height="24" viewBox="0 0 256 256" fill="#ffffff"><path d="M 256 256 L 128 256 L 0 128 L 128 128 Z M 256 128 L 128 128 L 0 0 L 128 0 Z"/></svg>
+    <span class="word">出海建站社</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="about.html">关于我们</a>
+    <a href="services.html">业务范围</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html" class="active">联系</a>
+    <div class="lang-switch">
+      <a href="contact.html" class="on">中文</a>
+      <a href="../contact.html">EN</a>
+    </div>
+    <a class="nav-cta" href="mailto:2096243628@qq.com">联系我们</a>
+  </div>
+  <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">☰</button>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="index.html">首页</a>
+  <a href="about.html">关于我们</a>
+  <a href="services.html">业务范围</a>
+  <a href="cases.html">案例</a>
+  <a href="contact.html">联系</a>
+  <a href="../contact.html">English</a>
+  <a href="mailto:2096243628@qq.com">发邮件</a>
+</div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Contact · 联系</div>
+    <h1>发一封邮件，<span class="font-playfair">聊出方案</span></h1>
+    <p>一封邮件，把品类、产品数量、想做的事情说清楚，24 小时内给你回复。</p>
+  </div>
+</header>
+
+<section style="padding-top:80px">
+  <div class="wrap grid-2" style="align-items:start">
+    <div class="reveal">
+      <div class="sec-kicker">How to reach · 怎么联系</div>
+      <h2 style="margin-bottom:20px">联系邮箱</h2>
+      <a class="big-mail" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,3.4vw,34px);color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(232,112,42,.4);padding-bottom:4px" href="mailto:2096243628@qq.com">2096243628@qq.com</a>
+
+      <div class="lead-form">
+        <div class="row">
+          <label>怎么称呼你 <input type="text" id="f-name" placeholder="姓名 / 昵称"></label>
+          <label>你的邮箱 <input type="email" id="f-email" placeholder="you@example.com"></label>
+        </div>
+        <label>产品品类 <input type="text" id="f-cat" placeholder="例如：手机配件、服饰、家居用品"></label>
+        <div class="row">
+          <label>目标市场
+            <select id="f-market">
+              <option value="">请选择...</option>
+              <option>北美</option>
+              <option>欧洲</option>
+              <option>东南亚</option>
+              <option>中东</option>
+              <option>拉美</option>
+              <option>全球 / 多市场</option>
+              <option>还没定</option>
+            </select>
+          </label>
+          <label>想做什么
+            <select id="f-need">
+              <option value="">请选择...</option>
+              <option>只建站</option>
+              <option>建站 + 主图详情页设计</option>
+              <option>全套（建站 + 设计 + 广告/运营）</option>
+              <option>店铺运营托管</option>
+              <option>老站改版 / 维护</option>
+              <option>先问几个问题</option>
+            </select>
+          </label>
+        </div>
+        <label>项目情况
+          <textarea id="f-msg" placeholder="产品数量、已有店铺链接、产品图、时间要求……信息越全，回复越准。"></textarea>
+        </label>
+        <button class="btn" type="button" onclick="sendInquiry()">发送询盘</button>
+        <p class="form-hint">点击按钮会用你的邮件客户端打开一封已填好的邮件；也可以直接发邮件到 2096243628@qq.com。</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sec-kicker">Expectations · 你会得到什么</div>
+      <h2 style="margin-bottom:20px">你会得到什么</h2>
+      <div class="prose">
+        <ul>
+          <li><b>24 小时内</b>回复（工作日），说明可行性与初步方案</li>
+          <li><b>明确的报价与工期</b>，不含糊、不押后</li>
+          <li><b>先看真实交付</b>再决定，演示店铺可开放</li>
+          <li><b>开工后进度同步</b>，交付给后台权限</li>
+        </ul>
+        <div class="note"><p>信息越全，回复越准。缺信息的邮件我也会回，先问清楚再给方案。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">FAQ · 常见问题</div>
+      <h2>你可能想问的</h2>
+    </div>
+    <div class="faq">
+      <details class="reveal">
+        <summary>多久能做好？</summary>
+        <p>基础店 3 天内交付；含主图、广告与运营的全套方案约 5-7 天。加急可协商，但加急不牺牲质量。</p>
+      </details>
+      <details class="reveal">
+        <summary>怎么收费？先付多少？</summary>
+        <p>确认方案后预付 50% 开工，交付验收后结清。Shopify 订阅费和域名你直接付给平台，我不经手。</p>
+      </details>
+      <details class="reveal">
+        <summary>我不懂技术，能自己运营吗？</summary>
+        <p>能。交付时附图文教程 + 一次在线教学；需要的话选运营托管，日常维护我来。</p>
+      </details>
+      <details class="reveal">
+        <summary>可以先看效果再决定吗？</summary>
+        <p>可以。案例页有真实演示店铺，联系后可开放给你看 Shopify 前后台效果；也可以先出首页方案稿再决定。</p>
+      </details>
+      <details class="reveal">
+        <summary>Shopify 和自建独立站有什么区别？</summary>
+        <p>Shopify 是托管平台：稳定、有结账与物流体系，适合绝大多数卖家，月费由你付给平台。自建独立站更自由（可深度定制），但需要自己维护服务器。默认推荐 Shopify，按需可做自建。</p>
+      </details>
+      <details class="reveal">
+        <summary>能帮我选品或做市场建议吗？</summary>
+        <p>可以。按你的货源和预算，给选品方向、定价参考与目标市场建议，作为建站方案的一部分，不额外收费。</p>
+      </details>
+      <details class="reveal">
+        <summary>广告投放也做吗？</summary>
+        <p>做素材制作与投放结构建议；如果你要代投，需要先确认广告账户情况，再按实际工作量报价。</p>
+      </details>
+      <details class="reveal">
+        <summary>后续想加功能怎么办？</summary>
+        <p>随时找我，按单项报价，老客户有优先排期与折扣。</p>
+      </details>
+      <details class="reveal">
+        <summary>如果做出来的效果不满意？</summary>
+        <p>交付前有确认环节，按确认稿执行；交付后 7 天内免费调整小问题。原则是先把预期聊清楚，不搞"做完才知道"。</p>
+      </details>
+      <details class="reveal">
+        <summary>能用微信联系吗？</summary>
+        <p>目前以邮件为主要联系方式（2096243628@qq.com），回复稳定、可追溯。邮件发来后如需即时沟通，我们可以在邮件里约时间。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:40px">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="sec-kicker">Start · 开始</div>
+      <h2>现在发邮件，今天出方案</h2>
+      <p>不聊也能先问问题，回复本身就是免费的咨询。</p>
+      <a class="big-mail" href="mailto:2096243628@qq.com">2096243628@qq.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 出海建站社 · Shopify / 独立站搭建与运营</div>
+    <div><a href="index.html">首页</a> · <a href="about.html">关于我们</a> · <a href="services.html">业务范围</a> · <a href="cases.html">案例</a> · <a href="privacy.html">隐私政策</a> · <a href="terms.html">服务条款</a> · <a href="../contact.html">EN</a> · <a href="mailto:2096243628@qq.com">2096243628@qq.com</a></div>
+  </div>
+</footer>
+
+<script>
+  function sendInquiry() {
+    var name = (document.getElementById('f-name').value || '').trim();
+    var email = (document.getElementById('f-email').value || '').trim();
+    var cat = (document.getElementById('f-cat').value || '').trim();
+    var market = document.getElementById('f-market').value || '';
+    var need = document.getElementById('f-need').value || '';
+    var msg = (document.getElementById('f-msg').value || '').trim();
+    var lines = [];
+    if (name) lines.push('称呼：' + name);
+    if (email) lines.push('联系邮箱：' + email);
+    if (cat) lines.push('品类：' + cat);
+    if (market) lines.push('目标市场：' + market);
+    if (need) lines.push('需求：' + need);
+    if (msg) lines.push('详情：' + msg);
+    var subject = encodeURIComponent('建站询盘' + (cat ? ' - ' + cat : ''));
+    var body = encodeURIComponent(lines.join('\n'));
+    window.location.href = 'mailto:2096243628@qq.com?subject=' + subject + '&body=' + body;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
+</body>
+</html>
