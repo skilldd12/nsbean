@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skilldd12.github.io/web-service-site/sitemap.xml
