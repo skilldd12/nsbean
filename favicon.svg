@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="14" fill="#000000"/>
-  <text x="29" y="42" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900" fill="#ffffff" text-anchor="middle">NS</text>
-  <circle cx="49" cy="49" r="7" fill="#68B301"/>
+  <g transform="translate(32 22)">
+    <ellipse cx="0" cy="0" rx="9" ry="13" fill="none" stroke="#68B301" stroke-width="3"/>
+    <path d="M0 -13 C 7 -6, 7 6, 0 13" fill="none" stroke="#68B301" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="32" y="47" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="900" text-anchor="middle">
+    <tspan fill="#ffffff">NS-</tspan><tspan fill="#68B301">BEAN</tspan>
+  </text>
 </svg>
