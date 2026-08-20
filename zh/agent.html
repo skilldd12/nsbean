@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 运营 Agent - NS-BEAN | 跨境电商 AI 智能体</title>
+<meta name="description" content="NS-BEAN AI 运营管家：SEO 关键词评分、询盘分级、秒级报价、内容生成与出海建议。页面内嵌真实运行的 Agent，可直接体验。">
+<link rel="canonical" href="https://skilldd12.github.io/nsbean-shopify-ecommerce-design/zh/agent.html">
+<link rel="alternate" hreflang="zh" href="https://skilldd12.github.io/nsbean-shopify-ecommerce-design/zh/agent.html">
+<link rel="alternate" hreflang="en" href="https://skilldd12.github.io/nsbean-shopify-ecommerce-design/agent.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 运营 Agent - NS-BEAN">
+<meta property="og:description" content="一个管住整条外贸运营线的 AI 智能体：SEO / 询盘 / 报价 / 内容 / 出海。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .agent-hero{background:radial-gradient(900px 420px at 70% -10%,rgba(232,112,42,.22),transparent 60%),radial-gradient(700px 380px at 15% 110%,rgba(232,112,42,.12),transparent 55%);border-bottom:1px solid var(--line)}
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+  @media(max-width:920px){.cap-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.cap-grid{grid-template-columns:1fr}}
+  .cap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:transform .2s,border-color .2s}
+  .cap:hover{transform:translateY(-3px);border-color:rgba(232,112,42,.5)}
+  .cap .no{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
+  .cap h3{font-size:17px;font-weight:600;margin-bottom:8px}
+  .cap p{font-size:13.5px;color:var(--muted);line-height:1.75}
+  .cap .demo{margin-top:14px;font-size:11.5px;color:rgba(238,242,240,.5);font-family:ui-monospace,monospace;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.14);border-radius:8px;padding:8px 12px;word-break:break-word;white-space:pre-wrap;overflow-wrap:break-word}
+  .agent-demo{margin-top:44px}
+  .agent-demo .frame{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 24px 70px rgba(0,0,0,.4)}
+  .agent-demo iframe{width:100%;height:720px;border:0;display:block;background:#fff}
+  .agent-demo .bar{display:flex;align-items:center;gap:9px;padding:12px 16px;background:var(--ink-2);border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}
+  .agent-demo .bar .dots{display:flex;gap:6px}
+  .agent-demo .bar .dots i{width:10px;height:10px;border-radius:50%}
+  .agent-demo .bar .url{margin-left:auto;font-family:ui-monospace,monospace;color:rgba(238,242,240,.45)}
+  .tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+  @media(max-width:860px){.tech-grid{grid-template-columns:1fr}}
+  .tech{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .tech .num{display:inline-flex;width:28px;height:28px;border-radius:8px;background:rgba(232,112,42,.16);color:var(--accent);font-weight:700;font-size:13px;align-items:center;justify-content:center;margin-bottom:12px}
+  .tech h3{font-size:15.5px;font-weight:600;margin-bottom:6px}
+  .tech .sub{font-size:12px;color:rgba(238,242,240,.45);margin-bottom:12px}
+  .tech ul{list-style:none}
+  .tech li{font-size:13px;color:var(--muted);padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.09);line-height:1.7}
+  .tech li:last-child{border-bottom:none}
+  .tech li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:2px;background:var(--accent);margin-right:9px}
+  .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  @media(max-width:860px){.pricing{grid-template-columns:1fr}}
+  .price-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center}
+  .price-card.hot{border-color:rgba(232,112,42,.55);background:linear-gradient(180deg,rgba(232,112,42,.1),var(--panel) 60%)}
+  .price-card .pt{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+  .price-card .pp{font-size:30px;font-weight:700;margin:12px 0 6px;color:#fff}
+  .price-card .pp small{font-size:13px;color:var(--muted);font-weight:400}
+  .price-card .pd{font-size:12.5px;color:var(--muted);line-height:1.7}
+  .price-card .tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--accent);background:rgba(232,112,42,.14);padding:4px 12px;border-radius:99px}
+  .note{font-size:12px;color:rgba(238,242,240,.45);margin-top:14px;text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">
+    <img class="logo" src="../assets/nsbean-logo-cut.png" alt="NS-BEAN logo">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="about.html">关于我们</a>
+    <a href="services.html">业务范围</a>
+    <a href="agent.html" class="active">AI 智能体</a>
+    <a href="cases.html">案例</a>
+    <a href="contact.html">联系</a>
+    <div class="lang-switch">
+      <a href="agent.html" class="on">中文</a>
+      <a href="../agent.html">EN</a>
+    </div>
+    <a class="nav-cta" href="mailto:2096243628@qq.com">联系我们</a>
+  </div>
+  <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">☰</button>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="index.html">首页</a>
+  <a href="about.html">关于我们</a>
+  <a href="services.html">业务范围</a>
+  <a href="agent.html">AI 智能体</a>
+  <a href="cases.html">案例</a>
+  <a href="contact.html">联系</a>
+  <a href="../agent.html">EN</a>
+  <a href="mailto:2096243628@qq.com">邮件联系</a>
+</div>
+
+<header class="page-hero agent-hero">
+  <div class="wrap">
+    <div class="kicker">AI 智能体 · 旗舰案例</div>
+    <h1>一个把外贸运营跑成流水线的智能体，<span class="font-playfair">7×24 小时在岗</span></h1>
+    <p>SEO 关键词评分、询盘分级跟进、秒级报价、外贸内容生成、出海方案建议——建立在确定性引擎之上，不是聊天脚本。本页内嵌的是一个真实运行中的 Agent，直接体验。</p>
+  </div>
+</header>
+
+<section style="padding-top:60px">
+  <div class="wrap">
+    <div class="sec-kicker">能力 · 它能干什么</div>
+    <h2 style="font-size:26px;margin-bottom:6px">六件事，一个智能体管住</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:680px">下面每一个数字都由确定性引擎实时计算——模型只负责解释，绝不编造数据。用大白话提问即可，中英文都行。</p>
+    <div class="cap-grid">
+      <div class="cap reveal">
+        <div class="no">01 · SEO</div>
+        <h3>关键词 SEO 评分</h3>
+        <p>监控 10 个推广词：月搜索量、关键词难度、当前排名、预计流量与冲进前三的增量，A/B/C 分级并给出每个词的具体打法。</p>
+        <div class="demo">试试：「分析一下外贸独立站建设这个关键词」</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">02 · 询盘</div>
+        <h3>询盘质量评分</h3>
+        <p>每封询盘自动打 0-100 分：产品匹配、采购意向、预算信号、紧急度四维加权，A/B/C 分级 + 跟进建议——A 级 2 小时响应。</p>
+        <div class="demo">试试：「佛山卫浴那个客户意向怎么样」</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">03 · 报价</div>
+        <h3>秒级服务报价</h3>
+        <p>建站、设计、广告、代运营、SEO、维护、Agent 定制 7 项服务实时组合，3 项 9 折、5 项 8.5 折，打包方案自动算好。</p>
+        <div class="demo">试试：「建站加运营打包多少钱」</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">04 · 内容</div>
+        <h3>外贸内容生成</h3>
+        <p>产品英文描述（5 段式）、询盘跟进邮件、社媒运营文案——模板 + 模型增强，写完即用，对齐外贸内容规范。</p>
+        <div class="demo">试试：「写个产品英文描述」</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">05 · 出海</div>
+        <h3>工厂出海方案</h3>
+        <p>独立站 + B2B 平台双轨怎么走、预算怎么分、先做哪头——基于规则库的可落地建议，不是空话套话。</p>
+        <div class="demo">试试：「工厂出海先做独立站还是平台」</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">06 · 看板</div>
+        <h3>运营数据驾驶舱</h3>
+        <p>询盘量、SEO 收录、报价转化、内容产出一屏看全，环比变化自动标注，预警一眼可见。</p>
+        <div class="demo">试试：「这个月生意怎么样」</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:70px">
+  <div class="wrap">
+    <div class="sec-kicker">在线体验 · 真实运行的 Agent</div>
+    <h2 style="font-size:26px;margin-bottom:6px">不是演示稿，是智能体真的在干活</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:680px">下方窗口直连真实后端：意图识别 → Worker 调度 → 确定性引擎 → RAG 规则 → 校验留痕，每一步都可在对话的 trace 里看到。</p>
+    <div class="agent-demo">
+      <div class="frame">
+        <div class="bar">
+          <span class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span>
+          <span>NS-BEAN · AI 运营管家</span>
+          <span class="url">在线体验 · trycloudflare 隧道</span>
+        </div>
+        <!-- 隧道链接：重启隧道后需更新此处 -->
+        <iframe src="https://governments-graduated-approach-applied.trycloudflare.com" title="NS-BEAN AI 运营管家在线体验" loading="lazy"></iframe>
+      </div>
+      <div class="note">演示数据已脱敏。若窗口加载失败，可新开标签页体验：<a href="https://governments-graduated-approach-applied.trycloudflare.com" target="_blank" rel="noopener">打开在线 Agent →</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:70px">
+  <div class="wrap">
+    <div class="sec-kicker">技术拆解 · 怎么做到的</div>
+    <h2 style="font-size:26px;margin-bottom:6px">生产级架构，不是套壳问答</h2>
+    <div class="tech-grid">
+      <div class="tech reveal">
+        <span class="num">1</span>
+        <h3>多智能体编排</h3>
+        <div class="sub">Supervisor - Worker</div>
+        <ul>
+          <li>主管识别意图并拆解任务（规则 + LLM 双保险）</li>
+          <li>SEO / 询盘 / 报价 / 内容 四专员各司其职</li>
+          <li>输出前 Verifier 幂等复算，数字绝不漂移</li>
+          <li>全流程 trace 日志，每步可回放</li>
+        </ul>
+      </div>
+      <div class="tech reveal">
+        <span class="num">2</span>
+        <h3>确定性引擎</h3>
+        <div class="sub">算数零幻觉</div>
+        <ul>
+          <li>评分、报价、计算全部确定性公式</li>
+          <li>模型只做解释与归因，绝不产数字</li>
+          <li>证据受限：没数据就给候选框架，不编"最优价"</li>
+          <li>数字转述强制约束：原样引用，禁止改写</li>
+        </ul>
+      </div>
+      <div class="tech reveal">
+        <span class="num">3</span>
+        <h3>RAG 规则库</h3>
+        <div class="sub">按规矩办事</div>
+        <ul>
+          <li>询盘 SLA、报价折扣、SEO 规范、内容规范</li>
+          <li>关键词 + 分类检索，未命中自动降级说明</li>
+          <li>回答可追溯来源（对话 trace 中可见）</li>
+        </ul>
+      </div>
+      <div class="tech reveal">
+        <span class="num">4</span>
+        <h3>评测闭环</h3>
+        <div class="sub">测试集 + 指标 + 归因</div>
+        <ul>
+          <li>52 条 synthetic 测试集（标准 + 边界用例）</li>
+          <li>意图准确率 / 决策合规率 / 计算误差率</li>
+          <li>bad case 三层归因：规则 / 数据 / 模型</li>
+          <li>规则 vs LLM 增强双路径对比评测</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:70px">
+  <div class="wrap">
+    <div class="sec-kicker">Agent 定制开发 · 服务线</div>
+    <h2 style="font-size:26px;margin-bottom:6px">不用你自己搭，我们给你做</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:680px">这个案例本身也是一条服务线——为你的业务定制 AI 智能体：询盘客服、自动拓客、内容生成、数据看板。</p>
+    <div class="pricing">
+      <div class="price-card reveal">
+        <div class="pt">单个智能体</div>
+        <div class="pp">¥3,000-5,000</div>
+        <div class="pd">按你的业务场景做 1 个：询盘接待、SEO 助手、内容生成，任选其一。</div>
+      </div>
+      <div class="price-card hot reveal">
+        <div class="pt">智能体套餐</div>
+        <div class="pp">¥8,000-12,000</div>
+        <div class="pd">3 个场景组合：客服 + 拓客 + 内容，含评测与看板，性价比最高。</div>
+        <span class="tag">推荐</span>
+      </div>
+      <div class="price-card reveal">
+        <div class="pt">年度维护</div>
+        <div class="pp">¥1,000-2,000 <small>/年</small></div>
+        <div class="pd">知识库更新、规则调优、模型成本复核——让智能体一直好用。</div>
+      </div>
+    </div>
+    <div class="note">价格为参考区间。告诉我你的业务场景，我们给出最合适的组合报价。</div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="sec-kicker">联系我们 · 现在就聊</div>
+      <h2>想要一个这样的智能体？<span class="font-playfair">我们聊聊</span></h2>
+      <p>说说你的业务、想自动化的环节。我们会诚实告诉你，智能体能做什么、不能做什么。</p>
+      <a class="big-mail" href="mailto:2096243628@qq.com">2096243628@qq.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 NS-BEAN · 独立站搭建与运营</div>
+    <div><a href="index.html">首页</a> · <a href="about.html">关于我们</a> · <a href="cases.html">案例</a> · <a href="agent.html">AI 智能体</a> · <a href="contact.html">联系</a> · <a href="privacy.html">隐私</a> · <a href="terms.html">条款</a> · <a href="../agent.html">EN</a> · <a href="mailto:2096243628@qq.com">2096243628@qq.com</a></div>
+  </div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
+</body>
+</html>

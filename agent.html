@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Operations Agent - NS-BEAN | Cross-border E-commerce AI Agent</title>
+<meta name="description" content="NS-BEAN AI Operations Agent: keyword SEO scoring, inquiry triage, instant quoting, content generation and market-entry advice for cross-border sellers. Try the live demo.">
+<link rel="canonical" href="https://skilldd12.github.io/nsbean-shopify-ecommerce-design/agent.html">
+<link rel="alternate" hreflang="en" href="https://skilldd12.github.io/nsbean-shopify-ecommerce-design/agent.html">
+<link rel="alternate" hreflang="zh" href="https://skilldd12.github.io/nsbean-shopify-ecommerce-design/zh/agent.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Operations Agent - NS-BEAN">
+<meta property="og:description" content="A cross-border operations agent that scores keywords, triages inquiries, quotes services and generates content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .agent-hero{background:radial-gradient(900px 420px at 70% -10%,rgba(232,112,42,.22),transparent 60%),radial-gradient(700px 380px at 15% 110%,rgba(232,112,42,.12),transparent 55%);border-bottom:1px solid var(--line)}
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+  @media(max-width:920px){.cap-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){.cap-grid{grid-template-columns:1fr}}
+  .cap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:transform .2s,border-color .2s}
+  .cap:hover{transform:translateY(-3px);border-color:rgba(232,112,42,.5)}
+  .cap .no{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
+  .cap h3{font-size:17px;font-weight:600;margin-bottom:8px}
+  .cap p{font-size:13.5px;color:var(--muted);line-height:1.75}
+  .cap .demo{margin-top:14px;font-size:11.5px;color:rgba(238,242,240,.5);font-family:ui-monospace,monospace;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.14);border-radius:8px;padding:8px 12px;word-break:break-word;white-space:pre-wrap;overflow-wrap:break-word}
+  .agent-demo{margin-top:44px}
+  .agent-demo .frame{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 24px 70px rgba(0,0,0,.4)}
+  .agent-demo iframe{width:100%;height:720px;border:0;display:block;background:#fff}
+  .agent-demo .bar{display:flex;align-items:center;gap:9px;padding:12px 16px;background:var(--ink-2);border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}
+  .agent-demo .bar .dots{display:flex;gap:6px}
+  .agent-demo .bar .dots i{width:10px;height:10px;border-radius:50%}
+  .agent-demo .bar .url{margin-left:auto;font-family:ui-monospace,monospace;color:rgba(238,242,240,.45)}
+  .tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
+  @media(max-width:860px){.tech-grid{grid-template-columns:1fr}}
+  .tech{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .tech .num{display:inline-flex;width:28px;height:28px;border-radius:8px;background:rgba(232,112,42,.16);color:var(--accent);font-weight:700;font-size:13px;align-items:center;justify-content:center;margin-bottom:12px}
+  .tech h3{font-size:15.5px;font-weight:600;margin-bottom:6px}
+  .tech .sub{font-size:12px;color:rgba(238,242,240,.45);margin-bottom:12px}
+  .tech ul{list-style:none}
+  .tech li{font-size:13px;color:var(--muted);padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.09);line-height:1.7}
+  .tech li:last-child{border-bottom:none}
+  .tech li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:2px;background:var(--accent);margin-right:9px}
+  .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  @media(max-width:860px){.pricing{grid-template-columns:1fr}}
+  .price-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center}
+  .price-card.hot{border-color:rgba(232,112,42,.55);background:linear-gradient(180deg,rgba(232,112,42,.1),var(--panel) 60%)}
+  .price-card .pt{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+  .price-card .pp{font-size:30px;font-weight:700;margin:12px 0 6px;color:#fff}
+  .price-card .pp small{font-size:13px;color:var(--muted);font-weight:400}
+  .price-card .pd{font-size:12.5px;color:var(--muted);line-height:1.7}
+  .price-card .tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--accent);background:rgba(232,112,42,.14);padding:4px 12px;border-radius:99px}
+  .note{font-size:12px;color:rgba(238,242,240,.45);margin-top:14px;text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">
+    <img class="logo" src="assets/nsbean-logo-cut.png" alt="NS-BEAN logo">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="agent.html" class="active">AI Agent</a>
+    <a href="cases.html">Case Studies</a>
+    <a href="contact.html">Contact</a>
+    <div class="lang-switch">
+      <a href="agent.html" class="on">EN</a>
+      <a href="zh/agent.html">中文</a>
+    </div>
+    <a class="nav-cta" href="mailto:2096243628@qq.com">Contact us</a>
+  </div>
+  <button class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">☰</button>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="agent.html">AI Agent</a>
+  <a href="cases.html">Case Studies</a>
+  <a href="contact.html">Contact</a>
+  <a href="zh/agent.html">中文版</a>
+  <a href="mailto:2096243628@qq.com">Email us</a>
+</div>
+
+<header class="page-hero agent-hero">
+  <div class="wrap">
+    <div class="kicker">AI Agent · flagship case</div>
+    <h1>An operations agent that runs the boring work, <span class="font-playfair">around the clock</span></h1>
+    <p>Keyword SEO scoring, inquiry triage, instant quoting, content generation and market-entry advice — built on a deterministic engine, not a chat script. This page embeds a real, running Agent. Try it below.</p>
+  </div>
+</header>
+
+<section style="padding-top:60px">
+  <div class="wrap">
+    <div class="sec-kicker">Capabilities · what it can do</div>
+    <h2 style="font-size:26px;margin-bottom:6px">Five jobs, one Agent</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:680px">Every number below is computed by a deterministic engine — the model only explains, never invents figures. Ask it in plain language, in English or Chinese.</p>
+    <div class="cap-grid">
+      <div class="cap reveal">
+        <div class="no">01 · SEO</div>
+        <h3>Keyword SEO Scoring</h3>
+        <p>Tracks 10 promotional keywords: monthly search volume, difficulty, current rank, estimated traffic and upside to rank #3, graded A/B/C with an action plan for each.</p>
+        <div class="demo">Try: "analyze the keyword 外贸独立站建设"</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">02 · Inquiries</div>
+        <h3>Inquiry Quality Scoring</h3>
+        <p>Every inbound inquiry scored 0-100 across product fit, buying intent, budget signal and urgency; graded A/B/C with a follow-up plan — A-level replied within 2 hours.</p>
+        <div class="demo">Try: "is this inquiry worth following up"</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">03 · Quoting</div>
+        <h3>Instant Service Quoting</h3>
+        <p>7 services from store build to AI Agent development, combined on the spot with pack discounts — 3+ items 10% off, 5+ items 15% off, total calculated instantly.</p>
+        <div class="demo">Try: "build plus operations package price"</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">04 · Content</div>
+        <h3>Export Content Generation</h3>
+        <p>5-part product descriptions, inquiry follow-up emails and social-media posts — template + model enhancement, ready to copy, aligned with export content standards.</p>
+        <div class="demo">Try: "write an English product description"</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">05 · Market Entry</div>
+        <h3>Factory Go-Global Advice</h3>
+        <p>Independent store + B2B platform dual-track strategy, budget split and sequencing — grounded answers from the rule base instead of generic marketing talk.</p>
+        <div class="demo">Try: "store first or platform first for a factory"</div>
+      </div>
+      <div class="cap reveal">
+        <div class="no">06 · Dashboard</div>
+        <h3>Operations Dashboard</h3>
+        <p>Inquiries, SEO indexing, quote conversion and content output in one view — month-over-month changes flagged automatically, alerts visible at a glance.</p>
+        <div class="demo">Try: "how is this month's business"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:70px">
+  <div class="wrap">
+    <div class="sec-kicker">Live Demo · real running Agent</div>
+    <h2 style="font-size:26px;margin-bottom:6px">Not a mockup — the Agent is actually working</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:680px">This embedded window connects to a live backend: intent recognition → worker dispatch → deterministic engine → RAG rules → verification, every step visible in the trace. Try the sample questions inside.</p>
+    <div class="agent-demo">
+      <div class="frame">
+        <div class="bar">
+          <span class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></span>
+          <span>NS-BEAN · AI Operations Agent</span>
+          <span class="url">live demo · trycloudflare tunnel</span>
+        </div>
+        <!-- Live tunnel URL; update if the tunnel is restarted -->
+        <iframe src="https://governments-graduated-approach-applied.trycloudflare.com" title="NS-BEAN AI Operations Agent live demo" loading="lazy"></iframe>
+      </div>
+      <div class="note">Demo data is anonymized for presentation. If the window fails to load, open it in a new tab: <a href="https://governments-graduated-approach-applied.trycloudflare.com" target="_blank" rel="noopener">open live Agent →</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:70px">
+  <div class="wrap">
+    <div class="sec-kicker">Under the hood · how it works</div>
+    <h2 style="font-size:26px;margin-bottom:6px">Production-grade architecture, not a chat script</h2>
+    <div class="tech-grid">
+      <div class="tech reveal">
+        <span class="num">1</span>
+        <h3>Multi-Agent Orchestration</h3>
+        <div class="sub">Supervisor - Worker</div>
+        <ul>
+          <li>Supervisor classifies intent and dispatches tasks (rules + LLM double-check)</li>
+          <li>SEO / Inquiry / Quote / Content specialists work independently</li>
+          <li>Verifier re-computes every number before replying — no drift</li>
+          <li>Full trace log, every step replayable</li>
+        </ul>
+      </div>
+      <div class="tech reveal">
+        <span class="num">2</span>
+        <h3>Deterministic Engine</h3>
+        <div class="sub">zero hallucination on numbers</div>
+        <ul>
+          <li>Scoring, pricing and quotes come from deterministic formulas</li>
+          <li>The model only explains and attributes — it never produces figures</li>
+          <li>Evidence-gated: no data → framework + test plan, no invented "optimal price"</li>
+          <li>Strict copy rules: numbers are quoted verbatim, never rewritten</li>
+        </ul>
+      </div>
+      <div class="tech reveal">
+        <span class="num">3</span>
+        <h3>RAG Rule Base</h3>
+        <div class="sub">acts by the rules</div>
+        <ul>
+          <li>Inquiry SLA, pack discounts, SEO and content standards</li>
+          <li>Keyword + category retrieval; auto-degrades with explanation when nothing matches</li>
+          <li>Answers cite their source, visible in the trace</li>
+        </ul>
+      </div>
+      <div class="tech reveal">
+        <span class="num">4</span>
+        <h3>Evaluation Loop</h3>
+        <div class="sub">test set + metrics + attribution</div>
+        <ul>
+          <li>52-case synthetic suite (standard + edge cases)</li>
+          <li>Intent accuracy / decision compliance / calc error rate</li>
+          <li>Bad-case attribution across rules, data and model layers</li>
+          <li>Rule vs LLM-enhanced paths compared side by side</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:70px">
+  <div class="wrap">
+    <div class="sec-kicker">AI Agent Development · as a service</div>
+    <h2 style="font-size:26px;margin-bottom:6px">You do not need to build it yourself</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:680px">This case is also a service line. We build custom Agents for your business — inquiry chat, lead generation, content generation, data dashboards.</p>
+    <div class="pricing">
+      <div class="price-card reveal">
+        <div class="pt">Single Agent</div>
+        <div class="pp">¥3,000-5,000</div>
+        <div class="pd">One scenario, picked to fit your business — inquiry reception, SEO assistant, content generator.</div>
+      </div>
+      <div class="price-card hot reveal">
+        <div class="pt">Agent Pack</div>
+        <div class="pp">¥8,000-12,000</div>
+        <div class="pd">3 scenarios combined — chat + outreach + content, with evaluation and dashboards. Best value.</div>
+        <span class="tag">Recommended</span>
+      </div>
+      <div class="price-card reveal">
+        <div class="pt">Maintenance</div>
+        <div class="pp">¥1,000-2,000 <small>/year</small></div>
+        <div class="pd">Knowledge updates, rule tuning, model cost review — we keep your Agent sharp.</div>
+      </div>
+    </div>
+    <div class="note">Pricing is a guide. Tell us your scenario and we will quote the right combination.</div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="sec-kicker">Contact · get in touch</div>
+      <h2>Want an Agent like this for your business? <span class="font-playfair">Let's talk</span></h2>
+      <p>Describe your business and which jobs you want automated. We will tell you honestly what an Agent can and cannot do for you.</p>
+      <a class="big-mail" href="mailto:2096243628@qq.com">2096243628@qq.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 NS-BEAN · Independent store build &amp; operations</div>
+    <div><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="cases.html">Case Studies</a> · <a href="agent.html">AI Agent</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="zh/agent.html">中文</a> · <a href="mailto:2096243628@qq.com">2096243628@qq.com</a></div>
+  </div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
+</body>
+</html>
