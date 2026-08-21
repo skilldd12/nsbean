@@ -62,9 +62,9 @@
     radial.id = 'beam-grad';
     radial.setAttribute('cx', '50%'); radial.setAttribute('cy', '0%'); radial.setAttribute('r', '80%');
     var stop1 = document.createElementNS(NS, 'stop');
-    stop1.setAttribute('offset', '0%'); stop1.setAttribute('stop-color', '#e8702a'); stop1.setAttribute('stop-opacity', '0.55');
+    stop1.setAttribute('offset', '0%'); stop1.setAttribute('stop-color', '#71b72e'); stop1.setAttribute('stop-opacity', '0.55');
     var stop2 = document.createElementNS(NS, 'stop');
-    stop2.setAttribute('offset', '100%'); stop2.setAttribute('stop-color', '#6366f1'); stop2.setAttribute('stop-opacity', '0');
+    stop2.setAttribute('offset', '100%'); stop2.setAttribute('stop-color', '#71b72e'); stop2.setAttribute('stop-opacity', '0');
     radial.appendChild(stop1); radial.appendChild(stop2);
     defs.appendChild(radial);
     svg.appendChild(defs);
@@ -81,7 +81,7 @@
 
       var circle = document.createElementNS(NS, 'circle');
       circle.setAttribute('r', '1.1');
-      circle.setAttribute('fill', '#ffb27a');
+      circle.setAttribute('fill', '#a0d76e');
       circle.setAttribute('opacity', '0.7');
       var anim = document.createElementNS(NS, 'animateMotion');
       anim.setAttribute('dur', (6 + (i % 5) * 1.7) + 's');

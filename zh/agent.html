@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#ffffff">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 运营 Agent - NS-BEAN | 跨境电商 AI 智能体</title>
 <meta name="description" content="NS-BEAN AI 运营管家：SEO 关键词评分、询盘分级、秒级报价、内容生成与出海建议。页面内嵌真实运行的 Agent，可直接体验。">
@@ -14,15 +15,15 @@
 <meta property="og:description" content="一个管住整条外贸运营线的 AI 智能体：SEO / 询盘 / 报价 / 内容 / 出海。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 <style>
-  .agent-hero{background:radial-gradient(900px 420px at 70% -10%,rgba(232,112,42,.22),transparent 60%),radial-gradient(700px 380px at 15% 110%,rgba(232,112,42,.12),transparent 55%);border-bottom:1px solid var(--line)}
+  .agent-hero{background:radial-gradient(900px 420px at 70% -10%,rgba(113,183,46,.22),transparent 60%),radial-gradient(700px 380px at 15% 110%,rgba(113,183,46,.12),transparent 55%);border-bottom:1px solid var(--line)}
   .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
   @media(max-width:920px){.cap-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:620px){.cap-grid{grid-template-columns:1fr}}
   .cap{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:transform .2s,border-color .2s}
-  .cap:hover{transform:translateY(-3px);border-color:rgba(232,112,42,.5)}
+  .cap:hover{transform:translateY(-3px);border-color:rgba(113,183,46,.5)}
   .cap .no{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:10px}
   .cap h3{font-size:17px;font-weight:600;margin-bottom:8px}
   .cap p{font-size:13.5px;color:var(--muted);line-height:1.75}
@@ -37,7 +38,7 @@
   .tech-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:44px}
   @media(max-width:860px){.tech-grid{grid-template-columns:1fr}}
   .tech{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-  .tech .num{display:inline-flex;width:28px;height:28px;border-radius:8px;background:rgba(232,112,42,.16);color:var(--accent);font-weight:700;font-size:13px;align-items:center;justify-content:center;margin-bottom:12px}
+  .tech .num{display:inline-flex;width:28px;height:28px;border-radius:8px;background:rgba(113,183,46,.16);color:var(--accent);font-weight:700;font-size:13px;align-items:center;justify-content:center;margin-bottom:12px}
   .tech h3{font-size:15.5px;font-weight:600;margin-bottom:6px}
   .tech .sub{font-size:12px;color:rgba(238,242,240,.45);margin-bottom:12px}
   .tech ul{list-style:none}
@@ -47,12 +48,12 @@
   .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
   @media(max-width:860px){.pricing{grid-template-columns:1fr}}
   .price-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center}
-  .price-card.hot{border-color:rgba(232,112,42,.55);background:linear-gradient(180deg,rgba(232,112,42,.1),var(--panel) 60%)}
+  .price-card.hot{border-color:rgba(113,183,46,.55);background:linear-gradient(180deg,rgba(113,183,46,.1),var(--panel) 60%)}
   .price-card .pt{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
   .price-card .pp{font-size:30px;font-weight:700;margin:12px 0 6px;color:#fff}
   .price-card .pp small{font-size:13px;color:var(--muted);font-weight:400}
   .price-card .pd{font-size:12.5px;color:var(--muted);line-height:1.7}
-  .price-card .tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--accent);background:rgba(232,112,42,.14);padding:4px 12px;border-radius:99px}
+  .price-card .tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--accent);background:rgba(113,183,46,.14);padding:4px 12px;border-radius:99px}
   .note{font-size:12px;color:rgba(238,242,240,.45);margin-top:14px;text-align:center}
 </style>
 </head>
@@ -265,5 +266,5 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 </script>
-</body>
+<script src="../assets/bean.js" defer></script><script src="../assets/aurora-shader.js" defer></script></body>
 </html>

@@ -33,7 +33,7 @@
         var a = p.o * (0.5 + 0.5 * Math.sin(t / 1000 * p.tw + p.ph));
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,178,122,' + a.toFixed(3) + ')';
+        ctx.fillStyle = 'rgba(160,215,110,' + a.toFixed(3) + ')';
         ctx.fill();
       });
       if (!reduced) requestAnimationFrame(draw);
@@ -44,7 +44,7 @@
       ps.forEach(function (p) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,178,122,' + (p.o * 0.5).toFixed(3) + ')';
+        ctx.fillStyle = 'rgba(160,215,110,' + (p.o * 0.5).toFixed(3) + ')';
         ctx.fill();
       });
     }
