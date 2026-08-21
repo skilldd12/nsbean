@@ -40,11 +40,11 @@
     '    float d=length((p-c)*vec2(1.25,0.85));',
     '    float glow=exp(-d*d*5.2);',
     '    float pul=0.55+0.45*sin(u_time*0.28+fi*2.2);',
-    '    col-=glow*pul*vec3(0.30,0.42,0.16);',
+    '    col=mix(col,vec3(0.86,0.96,0.80),glow*pul*0.55);',
     '  }',
     '  float n=noise(p*7.0+vec2(u_time*0.015,0.0));',
     '  col-=n*0.018;',
-    '  col-=pow(1.0-p.y,1.6)*0.05*vec3(0.30,0.48,0.20);',
+    '  col=mix(col,vec3(0.90,0.97,0.85),pow(1.0-p.y,1.6)*0.30);',
     '  gl_FragColor=vec4(col,1.0);',
     '}'
   ].join('\n');
