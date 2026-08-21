@@ -96,8 +96,6 @@
 <header class="hero" id="top">
   <div class="hero-base hero-zoom"></div>
   <div class="aurora hero-aurora" aria-hidden="true"><span></span><span></span></div>
-  <div class="beams hero-beams" aria-hidden="true"></div>
-  <canvas class="sparkles" aria-hidden="true"></canvas>
   <div class="hero-reveal-layer" id="revealLayer"></div>
 
   <div class="hero-heading">
@@ -140,6 +138,43 @@
 </div>
 
 
+
+<section style="padding:64px 0 56px">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:28px">
+      <div class="sec-kicker">Explore · take a look around</div>
+      <h2>Start <span class="font-playfair">wherever you like</span></h2>
+    </div>
+    <div class="quick-jump">
+      <a class="qj-link reveal" href="about.html">
+        <span class="n">About</span><b>Who we are</b>
+        <p>An 8-year cross-border team that knows sellers and buyers</p>
+        <span class="arr">→</span>
+      </a>
+      <a class="qj-link reveal" href="services.html">
+        <span class="n">Services</span><b>What we do</b>
+        <p>Build, design, ads and operations, end to end</p>
+        <span class="arr">→</span>
+      </a>
+      <a class="qj-link reveal" href="cases.html">
+        <span class="n">Cases</span><b>Real work</b>
+        <p>See what we deliver before you decide</p>
+        <span class="arr">→</span>
+      </a>
+      <a class="qj-link reveal" href="contact.html">
+        <span class="n">Contact</span><b>Get in touch</b>
+        <p>One email gets you a concrete plan</p>
+        <span class="arr">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">Services · what we do</div>
+      <h2>One team, <span class="font-playfair">the whole cross-border chain</span></h2>
 <section class="range" id="capability-range">
   <div class="wrap">
     <div class="sec-head">
@@ -199,42 +234,6 @@
     </div>
   </div>
 </section>
-<section style="padding:64px 0 56px">
-  <div class="wrap">
-    <div class="sec-head reveal" style="margin-bottom:28px">
-      <div class="sec-kicker">Explore · take a look around</div>
-      <h2>Start <span class="font-playfair">wherever you like</span></h2>
-    </div>
-    <div class="quick-jump">
-      <a class="qj-link reveal" href="about.html">
-        <span class="n">About</span><b>Who we are</b>
-        <p>An 8-year cross-border team that knows sellers and buyers</p>
-        <span class="arr">→</span>
-      </a>
-      <a class="qj-link reveal" href="services.html">
-        <span class="n">Services</span><b>What we do</b>
-        <p>Build, design, ads and operations, end to end</p>
-        <span class="arr">→</span>
-      </a>
-      <a class="qj-link reveal" href="cases.html">
-        <span class="n">Cases</span><b>Real work</b>
-        <p>See what we deliver before you decide</p>
-        <span class="arr">→</span>
-      </a>
-      <a class="qj-link reveal" href="contact.html">
-        <span class="n">Contact</span><b>Get in touch</b>
-        <p>One email gets you a concrete plan</p>
-        <span class="arr">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-kicker">Services · what we do</div>
-      <h2>One team, <span class="font-playfair">the whole cross-border chain</span></h2>
       <p class="sec-desc">From domain to checkout, from the first product image to daily maintenance, we handle it. <a href="services.html">View all services →</a></p>
     </div>
     <div class="bento">
@@ -420,8 +419,7 @@
 
 <canvas id="splash-canvas" aria-hidden="true"></canvas>
 
-<script src="assets/beams.js"></script>
-<script src="assets/sparkles.js"></script>
+
 <script>
 (function () {
   'use strict';
@@ -680,35 +678,6 @@
     });
 
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#$%&';
-      document.querySelectorAll('.nav-links a').forEach(function (link) {
-        const original = link.textContent;
-        let timer = null;
-        link.addEventListener('mouseenter', function () {
-          if (timer) return;
-          let frame = 0;
-          timer = setInterval(function () {
-            frame++;
-            let out = '';
-            for (let i = 0; i < original.length; i++) {
-              if (original[i] === ' ') { out += ' '; continue; }
-              const done = frame + i >= original.length + 3;
-              out += done ? original[i] : chars[Math.floor(Math.random() * chars.length)];
-            }
-            link.textContent = out;
-            if (frame > original.length + 5) {
-              clearInterval(timer);
-              timer = null;
-              link.textContent = original;
-            }
-          }, 26);
-        });
-        link.addEventListener('mouseleave', function () {
-          if (timer) { clearInterval(timer); timer = null; }
-          link.textContent = original;
-        });
-      });
-    }
   }
 </script>
 <script type="module">

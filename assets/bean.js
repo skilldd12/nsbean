@@ -101,10 +101,10 @@
   pet.addEventListener('pointercancel', up);
   pet.addEventListener('click', function () {
     if (dragging) return;
-    location.href = 'agent.html';
+    location.href = 'agent.html#demo';
   });
   pet.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); location.href = 'agent.html'; }
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); location.href = 'agent.html#demo'; }
   });
 
   setTimeout(function () {

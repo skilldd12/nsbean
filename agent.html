@@ -50,11 +50,26 @@
   .price-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center}
   .price-card.hot{border-color:rgba(113,183,46,.55);background:linear-gradient(180deg,rgba(113,183,46,.1),var(--panel) 60%)}
   .price-card .pt{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-  .price-card .pp{font-size:30px;font-weight:700;margin:12px 0 6px;color:#fff}
+  .price-card .pp{font-size:30px;font-weight:700;margin:12px 0 6px;color:var(--text)}
   .price-card .pp small{font-size:13px;color:var(--muted);font-weight:400}
   .price-card .pd{font-size:12.5px;color:var(--muted);line-height:1.7}
   .price-card .tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--accent);background:rgba(113,183,46,.14);padding:4px 12px;border-radius:99px}
   .note{font-size:12px;color:rgba(238,242,240,.45);margin-top:14px;text-align:center}
+
+.demo-chat{display:flex;flex-direction:column;height:520px;background:#fff;scroll-margin-top:90px}
+.demo-chat .dc-hd{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line);background:#fafbfc}
+.demo-chat .dc-ava{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#9ad45a,#71b72e);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex:none}
+.demo-chat .dc-hd b{font-size:13.5px;display:block}
+.demo-chat .dc-hd span{font-size:10.5px;color:var(--muted);font-weight:400}
+.demo-chat .dc-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:#fafbfc}
+.demo-chat .m{max-width:88%;padding:9px 12px;border-radius:12px;font-size:13px;line-height:1.65;white-space:pre-line}
+.demo-chat .m.u{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.demo-chat .m.a{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.demo-chat .dc-in{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fff}
+.demo-chat .dc-in input{flex:1;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;outline:none;font-family:inherit;color:var(--text)}
+.demo-chat .dc-in input:focus{border-color:rgba(113,183,46,.55)}
+.demo-chat .dc-in button{background:var(--accent);border:none;color:#fff;border-radius:10px;padding:0 18px;font-size:13px;font-weight:600;cursor:pointer}
+.demo-chat .dc-in button:hover{background:var(--accent-2)}
 </style>
 </head>
 <body>
@@ -216,9 +231,18 @@
           <span class="url">live demo · trycloudflare tunnel</span>
         </div>
         <!-- Live tunnel URL; update if the tunnel is restarted -->
-        <iframe src="https://governments-graduated-approach-applied.trycloudflare.com" title="NS-BEAN AI Operations Agent live demo" loading="lazy"></iframe>
+        <div class="demo-chat" id="demo">
+        <div class="dc-hd">
+          <span class="dc-ava">B</span>
+          <div><b>Bean &middot; AI Operations Assistant</b><span>Online &middot; NS-BEAN knowledge base</span></div>
+        </div>
+        <div class="dc-msgs" id="dcMsgs">
+          <div class="m a">Hi, I am Bean&rsquo;s AI operations assistant.<br>Try asking:<br>&middot; How much is a store build plus operations?<br>&middot; Analyze these keywords for me<br>&middot; Write an English product description</div>
+        </div>
+        <div class="dc-in"><input id="dcInput" placeholder="Type a question&hellip;"><button id="dcSend">Send</button></div>
       </div>
-      <div class="note">Demo data is anonymized for presentation. If the window fails to load, open it in a new tab: <a href="https://governments-graduated-approach-applied.trycloudflare.com" target="_blank" rel="noopener">open live Agent →</a></div>
+      </div>
+      <div class="note">Built-in demo chat. Want the live backend Agent? Contact us for a trial.</div>
     </div>
   </div>
 </section>
@@ -325,6 +349,38 @@
     entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
+<script>
+(function () {
+  var FAQ = {
+    keyword: 'Take "custom coffee machine": 8,100 monthly searches, mid difficulty, high purchase intent. Plan: main keyword on the product page, long-tails as blog posts. Priority A.',
+    price: 'Build \u00a515,800 + Operations \u00a54,800 + Ad Creative \u00a52,000 = 3 items, 10% off: \u00a520,340. 5+ items get 15% off. Email us for a full quote.',
+    description: 'Template: brand story \u2192 materials & process \u2192 specs \u2192 use cases \u2192 after-sales. Send product photos and we will write it for you.',
+    inquiry: 'This inquiry scores 82/100 (fit 90%, intent 80%, budget 75%, urgency 60%) \u2192 Grade A, reply within 2 hours.',
+    platform: 'Go dual-track: independent store for brand premium + B2B platform for inquiry volume. Budget split 6:4.',
+    month: 'This month: inquiries +18%, SEO indexed +32 pages, quote conversion 27%, 12 pieces of content. All trending up.'
+  };
+  function reply(q) {
+    q = q.toLowerCase();
+    if (q.indexOf('keyword') > -1 || q.indexOf('seo') > -1) return FAQ.keyword;
+    if (q.indexOf('package') > -1 || q.indexOf('price') > -1 || q.indexOf('cost') > -1) return FAQ.price;
+    if (q.indexOf('description') > -1 || q.indexOf('write') > -1) return FAQ.description;
+    if (q.indexOf('inquiry') > -1 || q.indexOf('follow') > -1) return FAQ.inquiry;
+    if (q.indexOf('platform') > -1 || q.indexOf('factory') > -1) return FAQ.platform;
+    if (q.indexOf('month') > -1 || q.indexOf('business') > -1) return FAQ.month;
+    return 'I can help with that \u2014 try: "build plus operations package price", "analyze keywords", or "write an English product description".';
+  }
+  var box = document.getElementById('dcMsgs'), inp = document.getElementById('dcInput'), btn = document.getElementById('dcSend');
+  function add(m, who) { var d = document.createElement('div'); d.className = 'm ' + who; d.textContent = m; box.appendChild(d); box.scrollTop = box.scrollHeight; return d; }
+  function ask() {
+    var q = inp.value.trim(); if (!q) return; inp.value = '';
+    add(q, 'u');
+    var t = add('\u2026', 'a');
+    setTimeout(function () { t.textContent = reply(q); box.scrollTop = box.scrollHeight; }, 550);
+  }
+  btn.addEventListener('click', ask);
+  inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') ask(); });
+})();
 </script>
 <script src="assets/bean.js" defer></script><script src="assets/aurora-shader.js" defer></script></body>
 </html>
