@@ -615,7 +615,6 @@ footer a { color: var(--text); }
 
 /* ══ 数字滚动（anime.js 驱动）══ */
 .num .v { font-variant-numeric: tabular-nums; }
-.num .count::after { content: attr(data-suffix); }
 
 @media (max-width: 960px) {
   .bento-main, .bento-sub, .bento-sub + .bento-sub { grid-column: span 12; }
