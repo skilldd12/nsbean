@@ -852,3 +852,14 @@ details p { transition: opacity .2s ease; }
 .range-card .new-tag { position: absolute; top: 14px; right: 14px; font-family: var(--font-mono); font-size: 9.5px; font-weight: 700; letter-spacing: .12em; color: #fff; background: var(--accent); padding: 3px 8px; border-radius: 99px; }
 @media (max-width: 960px) { .range-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .range-grid { grid-template-columns: 1fr; } }
+
+/* hero 双 CTA ghost 变体 + 极简下滑提示 */
+.hero-cta-block { gap: 14px; flex-wrap: wrap; }
+.hero-cta.ghost { background: #fff; color: var(--accent); border: 1.5px solid rgba(113,183,46,.5); box-shadow: none; }
+.hero-cta.ghost:hover { background: rgba(113,183,46,.08); color: var(--accent-2); border-color: var(--accent); box-shadow: none; }
+.scroll-hint { display: flex; justify-content: center; margin-top: 24px; }
+.scroll-hint i { display: block; width: 2px; height: 44px; border-radius: 2px;
+  background: linear-gradient(to bottom, rgba(17,20,24,.34), transparent);
+  animation: shBreath 2.2s ease-in-out infinite; transform-origin: top; }
+@keyframes shBreath { 0%,100% { opacity: .35; transform: scaleY(.7); } 50% { opacity: 1; transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { .scroll-hint i { animation: none; opacity: .5; transform: none; } }
