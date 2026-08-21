@@ -215,5 +215,17 @@
   cardHoverSpring('.team-card');
   dragBack('.team-card .avatar');
 </script>
-<script src="../assets/bean.js" defer></script><script src="../assets/aurora-shader.js" defer></script></body>
+<script src="../assets/bean.js" defer></script><script src="../assets/aurora-shader.js" defer></script>
+<script type="module">
+import { animate } from '../assets/anime.esm.min.js';
+const countIo = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    countIo.unobserve(e.target);
+    animate(e.target, { innerText: [0, Number(e.target.dataset.count)], duration: 1500, round: 1, ease: 'outExpo' });
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.count').forEach((el) => countIo.observe(el));
+</script>
+</body>
 </html>
