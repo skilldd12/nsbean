@@ -63,14 +63,15 @@ export function caseFlip(targets = '.case-card') {
   if (reduced) return;
   document.querySelectorAll(targets).forEach((card) => {
     animate(card, {
-      rotateY: [34, 0],
+      rotateY: [22, 0],
       opacity: [0.25, 1],
-      translateY: [28, 0],
+      translateY: [24, 0],
+      ease: createSpring({ stiffness: 110, damping: 16 }),
       autoplay: onScroll({
         target: card,
-        enter: 'bottom 94%',
-        leave: 'top -12%',
-        sync: 0.5,
+        enter: 'bottom 88%',
+        leave: 'top -16%',
+        sync: 0,
       }),
     });
   });
