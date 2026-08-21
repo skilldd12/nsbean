@@ -689,5 +689,32 @@
   caseFlip('.grid-3 .card');
   timelineScrub('#tlBeam', '#process .tl');
 </script>
-<script src="assets/bean.js" defer></script><script src="assets/aurora-shader.js" defer></script></body>
+<script src="assets/bean.js" defer></script><script src="assets/aurora-shader.js" defer></script><script>
+(function () {
+  function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+  function run(el) {
+    if (el.dataset.run) return; el.dataset.run = '1';
+    var target = Number(el.dataset.count);
+    var suffix = el.dataset.suffix || '';
+    var dur = 1600;
+    var start = performance.now();
+    function frame(now) {
+      var p = Math.min((now - start) / dur, 1);
+      var v = Math.round(easeOutExpo(p) * target);
+      el.textContent = v + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(frame);
+  }
+  var countIo = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      countIo.unobserve(e.target);
+      run(e.target);
+    });
+  }, { threshold: 0.35 });
+  document.querySelectorAll('.count').forEach(function (el) { countIo.observe(el); });
+})();
+</script></body>
 </html>
